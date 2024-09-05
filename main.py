@@ -38,7 +38,15 @@ def main():
 
 
 def create():
-    ... # another day
+    with open("login.csv", "a") as new:
+        writer = csv.DictWriter(new, fieldnames=["user", "pass"])
+        user = input("Username: ")
+        password = input("Password: ")
+
+        writer.writerow({"user": user, "pass": password})
+
+
+    print("Login information added sucessfully. Restarting...\n\n")
 
 
 if __name__ == "__main__":
